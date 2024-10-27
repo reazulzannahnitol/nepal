@@ -1,0 +1,1236 @@
+/* Body with adjusted gradient background */
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-image: url(body.png);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 95%!important; /* Adjust to create more spacing on the sides */
+    max-width: 1200px; /* Set max width if necessary */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Add left and right padding for extra spacing */
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+/*All Section Title Styling */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #196B9D;
+    margin-bottom: 3px;
+    padding-top: 22px;
+    text-align: center;
+}
+
+/* Horizontal line under the Title */
+.section-hr {
+    width: 100px;
+    height: 4px;
+    background-color: #196B9D;
+    border: none;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+/* About us Page */
+h2{
+    font-weight:600;
+}
+.page {
+    border: 3px solid #1A6C9C;
+    margin: 20px auto; /* Center the page */
+    padding: 20px;
+    max-width: 900px; /* Set a maximum width to make it smaller on large screens */
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    text-align: center;
+    line-height: 200px;
+    font-size: 20px;
+    color: #888;
+}
+
+/* Media Query for smaller screens */
+@media (max-width: 768px) {
+    .page {
+        max-width: 100%; /* Full width on smaller screens */
+        margin: 10px;
+        padding: 10px;
+    }
+}
+.two-column-list {
+    columns: 2; /* Splits the list into two columns */
+    column-gap: 20px; /* Adjusts the space between columns */
+    padding: 0;
+}
+
+.two-column-list li {
+    margin-bottom: 10px; /* Adds space between list items */
+    text-align: center; /* Centers the text of each list item */
+    list-style-position: inside; /* Ensures the bullet stays inside with centered text */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.navbar {
+    background: linear-gradient(135deg, #d4e7f7, #334d5c);
+position: fixed!important;
+z-index: 999!important;
+width: 100%;
+
+}
+/* Navbar link colors */
+.navbar-nav .nav-link {
+    color: black!important;
+    font-weight: bolder;
+    font-size: 15px;
+}
+/* Navbar link colors */
+.navbar-nav .nav-link:hover {
+    color: rgb(255, 255, 255)!important;
+   
+}
+.mobile-nav-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the links */
+    margin-top: 50px; /* Push links down */
+}
+.navbar-brand{
+    padding-left: 20px;
+}
+
+.mobile-nav-link {
+    color: white;
+    text-decoration: none;
+   font-weight: bolder;
+    font-size: 1.1rem;
+    text-align: left; /* Center-align the text */
+    width: 100%; /* Take full width */
+    padding-bottom: 10px; /* Add space for the underline */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Underline effect */
+}
+.mobile-nav-link:hover {
+    color: rgb(0, 0, 0);
+
+}
+.mobile-nav-link:last-child {
+    border-bottom: none; /* Remove underline from the last link */
+}
+
+/* Hide the mobile nav toggler and menu on larger screens */
+@media (min-width: 992px) {
+    .mobile-nav-toggler, #mobileNav {
+        display: none;
+    }
+}
+
+/* Mobile nav toggler styling */
+.mobile-nav-toggler {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1050;
+}
+.mobile-nav-toggler button {
+    padding-top: 17px;
+    background: transparent;
+    border: none;
+    outline: none; /* Remove any outline */
+    border: none; /* Remove border */
+    color: white; /* Change icon color to white (or your desired color) */
+    font-size: 24px; /* Adjust icon size as needed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.mobile-nav-toggler button:hover,
+.mobile-nav-toggler button:focus {
+    opacity: 0.8;
+    background: none !important;
+    border: 0 !important; /* Extra to ensure no border appears */
+    outline: none !important; /* Ensure outline stays removed */
+    box-shadow: none !important; /* Remove any shadow */
+}
+
+/* Mobile navbar */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially hidden to the right */
+    width: 250px;
+    height: 100%;
+    background-color: #1a699dde;
+    z-index: 1050;
+    transition: right 0.3s ease;
+    
+}
+
+.mobile-nav.show {
+    right: 0; /* Slide in when active */
+}
+
+.mobile-nav-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 50px; /* Add this line to push links down */
+}
+
+
+
+
+.close-mobile-nav {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+
+/* Overlay styling when the menu is open */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* Contact Button */
+.contact-button {
+    background-color: red; /* Red background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    display: block; /* Make it a block element */
+    margin: 20px auto; /* Center the button and add vertical space */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bolder;
+}
+
+/* Social Media Links */
+.social-media-links {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 20px; /* Space above social icons */
+    padding-left: 43px;
+}
+
+.social-icon {
+    color: white; /* Icon color */
+    font-size: 24px; /* Icon size */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-icon:hover {
+    opacity: 0.8; /* Add hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media query for desktop */
+@media (min-width: 768px) { /* Adjust the min-width as needed */
+    .carousel-item {
+        height: 100vh; /* Full height for each carousel item */
+    }
+    .carousel-caption {
+        bottom: 50px; /* Adjust caption position on larger screens */
+    }
+    .carousel-inner {
+        height: 100%; /* Ensure the inner carousel has full height */
+    }
+    
+  
+    
+    .carousel-item img {
+        width: 100%; /* Full width */
+        height: 100%!important; /* Full height */
+        object-fit: cover; /* Ensure images cover the entire area */
+    }
+    
+}
+.hero-section {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('your-background-image.jpg') center center no-repeat;
+    background-size: cover;
+    
+  
+}
+
+.carousel-item {
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-fade .carousel-item {
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
+}
+
+.carousel-fade .carousel-item.active {
+    opacity: 1;
+}
+
+
+
+.carousel-item img {
+    height: 700px; /* Adjust height to fit the hero section */
+    object-fit: cover; /* Ensure the image covers the full width/height */
+}
+
+/* Font size for larger screens */
+.hero-section h1 {
+    font-size: 3rem;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+}
+
+.hero-section a {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+}
+
+.carousel-caption {
+    z-index: 999;
+    bottom: 30px; /* Adjust position */
+}
+
+@media (max-width: 576px) {
+    .carousel-caption h5 {
+        font-size: 3rem; /* Reduce heading size */
+        text-align: left;
+    }
+
+    .carousel-caption p {
+        font-size: 1rem; /* Reduce paragraph size */
+        text-align: left;
+    }
+
+    .carousel-caption {
+        bottom: 20px; /* Adjust position for mobile */
+    }
+}
+
+
+
+
+
+
+
+
+.job-opportunities-section {
+    padding: 60px 0;
+    background-color: #f9f9f9; /* Light background for contrast */
+}
+
+
+.job-categories {
+    display: flex;
+    justify-content: center; /* Distributes space between items */
+    flex-wrap: wrap; /* Allow items to wrap to a new line on smaller screens */
+    margin-bottom: 40px;
+}
+
+.category-item {
+    display: flex;
+    text-align: center;
+ max-width: 80%!important;
+    border-radius: 10px;
+    margin: 10px; /* Add margin for spacing on mobile */
+    background: linear-gradient(135deg, #196B9D 0%, #009688 100%); /* Gradient background */
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* For absolute positioning of icon */
+    overflow: hidden; /* Prevent overflow of the icon */
+    flex: 1 1 30%; /* Flex items, allowing 3 in a row on desktop */
+}
+
+.category-item:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.icon-container {
+    
+    font-size: 3rem; /* Larger icon size */
+   
+}
+
+.icon-container i {
+    color: #fff; /* White color for icons */
+    transition: transform 0.3s; /* For smooth icon hover effect */
+}
+
+.category-item:hover .icon-container i {
+    transform: scale(1.3); /* Scale icon on hover */
+}
+
+.category-item h4 {
+    padding-top: 15px;
+    font-size: 1.5rem;
+
+}
+
+.category-item p {
+    color: #e0e0e0; /* Light gray for description */
+    padding-top: 15px;
+}
+
+.container .btn-primaryy {
+    background-color: #b12121;; /* Custom button color */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.3rem;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.container .btn-primaryy:hover {
+    background-color: #ff0000; /* Darker shade on hover */
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .category-item {
+        flex: 1 1 100%; /* Each item takes full width */
+        margin: 15px 0; /* Add vertical margin for spacing */
+    }
+}
+/* Horizontal line styling and list style for mobile view */
+@media (max-width: 768px) {
+    .category-divider {
+        width: 2px;
+      height: 100px;
+        border: 1px solid #e0e0e0; /* Light gray color for divider */
+        margin-left: 20px;
+    }
+
+    .category-item p {
+        list-style-type: disc;
+        padding-left: 20px; /* Indent for list appearance */
+        color: #e0e0e0;
+    }
+    .icon-container {
+        margin-top: 25px; /* Space below the icon */
+    }
+    .category-item h4 {
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* What we offer section */
+.offer-card {
+    background-color: white;
+    border: 4px solid #1A6C9C;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.offer-card:hover {
+    transform: scale(1.05);
+}
+
+/* Outer circle around icon circle */
+.outer-circle {
+    background-color: white;
+    border: 2px solid #1A6C9C;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Inner icon circle */
+.icon-circle {
+    background-color: #1A6C9C;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon styling */
+.icon-circle i {
+    font-size: 1.5rem;
+}
+
+/* Card title styling */
+.card-title {
+    font-weight: bold;
+    color: #1A6C9C;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Positioning for the headline on top of the image */
+.headline-on-image {
+    position: absolute;
+    top: 20px; /* Adjust to place the headline where you want it on the image */
+    left: 20px; /* Adjust to align horizontally */
+    color: white; /* Text color for visibility on the image */
+    font-size: 3rem; /* Adjust size for visibility */
+    z-index: 1; /* Ensure it's above the image */
+    background-color: rgba(0, 0, 0, 0.5); /* Optional: Add background for better contrast */
+    padding: 10px; /* Optional: Add padding for spacing */
+    border-radius: 5px; /* Optional: Rounded edges */
+}
+
+/* Styling for the rest of the content */
+.about-section .text-content {
+    margin-top: 20px; /* Space between the headline and the paragraph */
+}
+
+/* Ensure the image container is positioned relative to allow absolute positioning of the headline */
+.position-relative {
+    position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#counter {
+    background-image: url('counter bg.jpg');
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    padding: 80px 0; /* Add some padding for better spacing */
+    color: #000000; /* Set text color to white for readability */
+    position: relative;
+}
+
+
+
+.counter-section {
+    opacity: 0; /* Initially hidden */
+    transform: translateX(-50px); /* Start position for fade-in effect */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    padding: 50px 0;
+    background-color: #fff; /* Background for counter section */
+
+    border: 1px solid #ddd; /* Optional border */
+}
+.counter-item {
+    text-align: center;
+}
+.counter-value {
+    font-size: 2rem; /* Adjust as needed */
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+/* Team Section */
+#meet-our-team {
+    padding: 50px 0;
+}
+
+.team-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    justify-content: center; /* Center the flex items */
+}
+
+.team-member {
+    text-align: center;
+    margin-bottom: 20px;
+    flex: 1 1 200px; /* Flexbox for responsive sizing */
+    max-width: 250px; /* Optional: Set a max width for team members */
+    box-sizing: border-box; /* Ensures padding/margin do not affect width */
+}
+
+.team-member img {
+    width: 70%; /* Full width of container */
+    height: auto; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 3px solid #196B9D; /* Round border with specified color */
+}
+
+.team-member h4 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.team-member p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Responsive Layout for Mobile */
+@media (max-width: 768px) {
+    .team-member {
+        flex: 1 1 100%; /* Each team member takes 100% width */
+        margin-right: 0; /* Reset margin */
+    }
+    .team-member img {
+        width: 50%; /* Reduce image size for mobile view */
+    }
+}
+
+/* Team Quote */
+.team-quote {
+    text-align: justify;
+    font-style: italic;
+    color: #555; /* Custom color for the quote text */
+    border-left: 4px solid #ddd; /* Optional: Add a vertical line for styling */
+    padding-left: 10px; /* Adds spacing between the text and the border */
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Our Sister Company Section */
+#our-sister-company {
+    padding: 50px 0;
+  }
+  #our-sister-company h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #056579;
+  }
+  
+  #our-sister-company p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  #our-sister-company img {
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Add shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+  }
+  
+  #our-sister-company .zoom-on-hover:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Larger shadow on hover */
+  }
+  
+  #our-sister-company a {
+    display: block;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    #our-sister-company .row {
+      text-align: center;
+    }
+    
+    #our-sister-company .order-md-2 {
+      order: 1;
+    }
+    
+    #our-sister-company img {
+      margin-top: 20px;
+    }
+  }
+  @media (max-width: 767.98px) {
+    /* For mobile view, change the order of elements for the "Navon Study International" section */
+    #our-sister-company .order-md-1 {
+      order: 2; /* Place image after the text in mobile view */
+    }
+    
+    #our-sister-company .order-md-2 {
+      order: 1; /* Place text before the image in mobile view */
+    }
+  }
+  .section-divider {
+    border: 1px solid #8d8d8d; /* Light gray color */
+    margin: 30px 0; /* Space above and below the line */
+    width: 100%; /* Full width */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Styling for the Testimonial Section */
+/* General Styling for the Testimonial Section */
+#testimonials {
+    padding: 60px 0;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between; /* Keep for desktop */
+    align-items: center; /* Keep for desktop */
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for card */
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+/* Blockquote Text */
+.testimonial-text blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Footer with Name */
+.testimonial-footer {
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+/* Testimonial Image */
+.testimonial-image {
+    margin-left: 20px; /* Margin for desktop view */
+    flex-shrink: 0;
+}
+
+.testimonial-img {
+    width: 80px; /* Size for desktop view */
+    height: 80px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile view adjustments */
+@media (max-width: 767px) {
+    .testimonial-card {
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center align items */
+        text-align: center; /* Center text */
+    }
+
+    .testimonial-image {
+        width: 80%; /* Set image width to 80% */
+        margin-bottom: 15px; /* Space below the image */
+    }
+
+    .testimonial-img {
+        width: 100%; /* Full width of the image */
+        height: auto; /* Maintain aspect ratio */
+        border-radius: 0; /* Ensure the image is not rounded */
+    }
+
+    .testimonial-text {
+        width: 100%; /* Allow text to take full width */
+    }
+
+    /* Ensuring the image comes first in mobile view */
+    .testimonial-card {
+        display: flex;
+    }
+
+    .testimonial-card > .testimonial-image {
+        order: -1; /* Move image to the top in mobile view */
+    }
+}
+
+/* Styling for larger screens remains the same */
+.testimonial-card {
+    display: flex; /* Default flex for larger screens */
+    justify-content: space-between;
+    align-items: center;
+}
+
+blockquote {
+ 
+    border-left: 5px solid #196B9D;
+    border-bottom: 5px solid #196B9D;
+}
+
+
+blockquote p {
+    font-size: 1rem;
+}
+
+.blockquote-footer {
+    color: #ffffff !important; /* Change to your desired color */
+}
+
+.blockquote-footer::before {
+    content: "" !important; /* Removes the default dash before the footer */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Gallery Section Styling */
+#unique-gallery {
+    width: 90%!important;
+    padding: 2rem 1rem; /* Vertical padding and horizontal padding */
+}
+
+/* Gallery Item Styling */
+.gallery-item {
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow for rounded corners */
+    transition: transform 0.3s; /* Smooth transform effect */
+}
+
+/* Hover Effect on Gallery Items */
+.gallery-item:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+}
+
+/* Adjustments for Mobile */
+@media (max-width: 768px) {
+    .gallery-item {
+        margin-bottom: 5px; /* Reduced space between items on mobile */
+    }
+}
+
+/* Custom CSS for Modal */
+.modal-dialog-centered {
+    display: flex;
+    align-items: center; /* Centering content vertically */
+    min-height: calc(100% - 1rem); /* Adjust height for full view */
+}
+/* Close Button Customization */
+.btn-close {
+    z-index: 1050; /* Ensure it is above the image */
+    /* Add any additional styles as needed */
+    background-color: white!important;
+}
+/* Add this CSS to your stylesheet */
+.modal-open {
+    overflow: hidden;
+}
+/* Custom Modal Backdrop */
+.modal-backdrop.show {
+    opacity: 0.1; /* Adjust the opacity as needed, e.g., 0.5 for a lighter overlay */
+    background-color: rgba(0, 0, 0, 0.327); /* Use black or any color for the overlay */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Container for Google Map to make it responsive office location*/
+.map-responsive {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    margin-bottom: 1rem; /* Space below the map */
+   
+    
+}
+
+/* Map iframe styling */
+.map-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* This one remains */
+    height: 100%; /* This will ensure it fills the map container properly */
+    border: 0;
+}
+
+/* Ensure map responsiveness and centering */
+@media (max-width: 768px) {
+    .map-responsive {
+        padding-top: 75%; /* Adjust aspect ratio for better mobile view if needed */
+        max-width: 100%;
+        margin: 0 auto; /* Center the map */
+    }
+}
+@media (max-width: 576px) {
+    .map-responsive {
+        padding-top: 70%; /* Adjust this to reduce space on smaller screens */
+    }
+}
+
+
+
+
+
+
+/* Apply Now application Form Card Styling */
+.form-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.1);
+    width: 50%;
+  }
+  
+  /* Right Image Styling */
+  .image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 45%;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .form-card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .image-container img {
+      max-width: 100%;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+  /* Blog Card */
+.blog-card {
+    position: relative;
+    overflow: hidden;
+    padding: 2px;
+    border: 1px solid #1964bf;
+}
+
+.blog-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.blog-card .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.blog-card:hover .overlay {
+    opacity: 1;
+}
+
+.blog-card .headline {
+    text-align: left;
+    position: absolute;
+    bottom: 15px; /* Adjust for space for progress bar */
+    left: 0; /* Align headline to the left */
+    width: 100%; /* Make the headline span the full width */
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    color: white;
+    padding: 10px 15px; /* Padding to give space around the text */
+    font-size: 20px;
+    margin: 0;
+    z-index: 2;
+    box-sizing: border-box;
+}
+
+
+/* Progress Bar */
+.progress-bar {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 0; /* Initially 0 */
+    height: 5px;
+    background-color: rgb(252, 0, 0);
+    z-index: 2;
+    transition: width 1s ease; /* Transition animation */
+}
+
+.blog-card:hover .progress-bar {
+    width: 50%; /* On hover, the bar will expand to 50% of the image width */
+}
+
+/* Hover Effect on Click */
+.blog-card:hover img {
+    transform: scale(1.05);
+}
+
+
+
+
+
+
+
+/* Blog Section Styling */
+.blog-section {
+    padding-top: 120px!important;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout for Desktop View - Center the Image */
+.article-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack the image and text vertically */
+    align-items: center; /* Center the content */
+    margin-bottom: 30px;
+}
+
+/* Text Section */
+.article-section {
+    text-align: left;
+    width: 100%;
+    max-width: 800px; /* Limit the width of the text for readability */
+    margin-bottom: 20px;
+}
+
+/* Image Section */
+.blog-image {
+    width: 100%;
+    max-width: 800px; /* Limit the width of the image for consistency */
+    height: auto;
+    text-align: center; /* Ensure the image is centered */
+    margin-bottom: 20px;
+}
+
+.blog-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensure the entire image is visible */
+    border-radius: 8px;
+}
+
+/* Responsive Design for Blog Section */
+@media (max-width: 1024px) {
+    /* Adjust layout for tablet and smaller screens */
+    .article-wrapper {
+        flex-direction: column;
+    }
+
+    .article-section, .blog-image {
+        max-width: 100%; /* Make it full-width on smaller screens */
+        margin: 0 auto; /* Center on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ensure image and text are still full-width and responsive */
+    .blog-image img {
+        width: 100%;
+        height: auto; /* Maintain the height ratio */
+    }
+}
+.apply-button {
+    background-color: #1964bf; /* Vibrant coral color */
+    color: #ffffff; /* White text color */
+    padding: 15px 30px; /* Top-bottom and left-right padding */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    font-weight: bold; /* Bold font */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Change cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+    display: inline-block; /* Align button correctly */
+}
+
+.apply-button:hover {
+    background-color: #da3324; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slightly lift the button on hover */
+}
+.button-container {
+    text-align: center; /* Center-align the content */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+
+
+
+
+
+
+/* footer */
+.cta-text {
+    font-weight: bold;
+    font-style: italic;
+    color: #ffffff;
+}
+
+/* Contact Icon Styling */
+.contact-icon {
+    font-size: 1.2rem;
+    color: #007bff; /* Bootstrap primary color */
+    margin-right: 8px;
+}
+
+/* Social Media Icon Styling */
+.social-media-icon {
+    font-size: 1.5rem; /* Adjust size as needed */
+    color: #ffffff; /* Default icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.social-media-icon:hover {
+    color: #007bff; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}

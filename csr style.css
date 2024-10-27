@@ -1,0 +1,403 @@
+* {
+    box-sizing: border-box; /* Include padding and border in element's total width */
+    
+  }
+body {
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    /* Set a gradient background color */
+    background: linear-gradient(to bottom, #ffffff, #E7E7E9);
+    /* Optional: set a fallback solid color in case the gradient is not supported */
+    background-color: #DFDFDF;
+}
+body, html {
+    overflow-x: hidden;
+}
+
+
+
+.csr-content{
+    padding:20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*All Section Title Styling */
+.section-title {
+    font-size: 36px;
+    font-weight: bold;
+    color: #196B9D;
+    margin-bottom: 3px;
+    padding-top: 22px;
+    text-align: center;
+}
+
+/* Horizontal line under the Title */
+.section-hr {
+    width: 100px;
+    height: 4px;
+    background-color: #196B9D;
+    border: none;
+    margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+
+
+
+
+
+
+
+
+.navbar {
+    background: linear-gradient(135deg, #d4e7f7, #334d5c);
+position: fixed!important;
+z-index: 999!important;
+width: 100%;
+
+}
+/* Navbar link colors */
+.navbar-nav .nav-link {
+    color: black!important;
+    font-weight: bolder;
+    font-size: 15px;
+}
+/* Navbar link colors */
+.navbar-nav .nav-link:hover {
+    color: rgb(255, 255, 255)!important;
+   
+}
+.mobile-nav-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the links */
+    margin-top: 50px; /* Push links down */
+}
+.navbar-brand{
+    padding-left: 20px;
+}
+
+.mobile-nav-link {
+    color: white;
+    text-decoration: none;
+   font-weight: bolder;
+    font-size: 1.1rem;
+    text-align: left; /* Center-align the text */
+    width: 100%; /* Take full width */
+    padding-bottom: 10px; /* Add space for the underline */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Underline effect */
+}
+.mobile-nav-link:hover {
+    color: rgb(0, 0, 0);
+
+}
+.mobile-nav-link:last-child {
+    border-bottom: none; /* Remove underline from the last link */
+}
+
+/* Hide the mobile nav toggler and menu on larger screens */
+@media (min-width: 992px) {
+    .mobile-nav-toggler, #mobileNav {
+        display: none;
+    }
+}
+
+/* Mobile nav toggler styling */
+.mobile-nav-toggler {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1050;
+}
+.mobile-nav-toggler button {
+    padding-top: 17px;
+    background: transparent;
+    border: none;
+    outline: none; /* Remove any outline */
+    border: none; /* Remove border */
+    color: white; /* Change icon color to white (or your desired color) */
+    font-size: 24px; /* Adjust icon size as needed */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.mobile-nav-toggler button:hover,
+.mobile-nav-toggler button:focus {
+    opacity: 0.8;
+    background: none !important;
+    border: 0 !important; /* Extra to ensure no border appears */
+    outline: none !important; /* Ensure outline stays removed */
+    box-shadow: none !important; /* Remove any shadow */
+}
+
+/* Mobile navbar */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    right: -250px; /* Initially hidden to the right */
+    width: 250px;
+    height: 100%;
+    background-color: #1a699dde;
+    z-index: 1050;
+    transition: right 0.3s ease;
+    
+}
+
+.mobile-nav.show {
+    right: 0; /* Slide in when active */
+}
+
+.mobile-nav-inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 50px; /* Add this line to push links down */
+}
+
+
+
+
+.close-mobile-nav {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    padding-right: 50px;
+    cursor: pointer;
+}
+
+/* Overlay styling when the menu is open */
+.mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1040;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+/* Contact Button */
+.contact-button {
+    background-color: red; /* Red background */
+    color: white; /* White text */
+    padding: 10px 15px; /* Padding for the button */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    display: block; /* Make it a block element */
+    margin: 20px auto; /* Center the button and add vertical space */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2rem; /* Font size */
+    font-weight: bolder;
+}
+
+/* Social Media Links */
+.social-media-links {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    margin-top: 20px; /* Space above social icons */
+    padding-left: 43px;
+}
+
+.social-icon {
+    color: white; /* Icon color */
+    font-size: 24px; /* Icon size */
+    text-decoration: none; /* Remove underline */
+    margin: 0 10px; /* Space between icons */
+}
+
+.social-icon:hover {
+    opacity: 0.8; /* Add hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+section {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+}
+
+h2, h3 {
+    text-align: center;
+    color: #333;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5rem; /* Adjust this size as needed for mobile */
+        font-weight: bold;
+    }
+}
+h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #666;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+
+
+/* Gallery Styles */
+.gallery-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Default to desktop layout */
+    gap: 15px;
+    margin-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal for zoomable images */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 90px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Modal Image Content */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Reduced to make it fit better on desktop */
+    max-height: 80vh; /* Ensure image fits within viewport height */
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 60px;    /* Reduced distance from the top */
+    right: 40px;  /* Reduced distance from the right */
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;  /* Ensure it stays above the image */
+}
+
+/* For medium desktops (992px to 1199px) */
+@media (min-width: 772px) {
+    /* Styles specific to medium desktops */
+    .close {
+        right: 550px;  /* Reduced distance from the right */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 images per row on mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+.top{
+    padding-top: 105px;
+    background-color: #f4f4f4;
+}
+
+
+
+
+
+
+
+
